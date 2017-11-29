@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+</head>
+<body>
+
+    <?php require_once __DIR__ . '/layouts/navbar.phtml'; ?>
+    <div class="container">
+    	
+    	<div class="jumbotron text-center">
+    		<h1>Go Law Produtos</h1>
+    	</div>
+    	
+    	<div class="row">
+            
+            <?php foreach($this->data as $produto): ?>
+            
+            <div class="col-xs-18 col-sm-6 col-md-3">
+              <div class="thumbnail">
+              <img src="/uploads/<?= $produto['foto'] ?>" alt="">                
+                  <div class="caption">
+                    <h4><?= $produto['nome'] ?></h4>
+                    <p><?= $produto['descricao'] ?></p>
+                    <p><a href="#" class="btn btn-info btn-xs">Comprar</a> <a href="#" class="btn btn-default btn-xs">Detalhes</a></p>
+                </div>
+              </div>
+            </div>
+            
+            <?php endforeach;?>
+            
+       </div><!-- End row -->
+    </div>
+	
+	
+
+
+</body>
+
+</html>

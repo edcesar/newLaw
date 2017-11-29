@@ -1,0 +1,4 @@
+Importe o arquivo sql para seu bando de dados
+Acerte as configurações do banco de dados na pasta configs arquivo dbConfig
+No terminal, execute php -S localhost:8000 -t public dentro da pasta raiz do projeto
+Acesse localhost:8000

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta charset="utf-8">
+</head>
+<body>
+ <?php require_once __DIR__ . '/../layouts/navbar.phtml'; ?>
+    <div class="container">
+    	<div class="jumbotron text-center">
+    		<h1>Go Law</h1>
+    		<h3>Clientes</h3>
+    	</div>
+    	
+    	
+    	<table class="table table-hover">
+    		<thead>
+    			<tr>
+    				<th>Id</th>
+    				<th>Nome</th>
+    				<th>E-mail</th>
+    				<th>Tipo de Pagamento</th>
+    				<th>Data de cadastro</th>
+    				<th>Acões</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<?php foreach($this->data as $cliente): ?>
+    			<tr>
+    				<td><?= $cliente['id'] ?></td>
+    				<td><?= $cliente['nome'] ?></td>
+    				<td><?= $cliente['email'] ?></td>
+    				<td><?= $cliente['tipoPagamento'] ?></td>
+    				<td><?= $cliente['dataCadastro'] ?></td>
+    				<td> <a href="/cliente/<?= $cliente['id'] ?>">Editar</a> | <a href="/removerCliente/<?= $cliente['id'] ?>">Remover</a> </td>
+    			</tr>
+    			<?php endforeach;?>
+    		</tbody>
+    	</table>
+    	<a href="/cadastrar-cliente" class="btn btn-primary">Cadastrar novo cliente</a>
+    </div>
+
+</body>
+</html>

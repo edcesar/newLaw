@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta charset="utf-8">
+</head>
+<body>
+
+  <?php require_once __DIR__ . '/../layouts/navbar.phtml'; ?>
+
+<div class="container">
+	<div class="jumbotron text-center">
+		<h1>Go Law</h1>
+		<h3>Alterar Cliente</h3>
+	</div>	
+
+	<form method="POST" action="/alterarCliente">
+		<input type="hidden" name="cliente[id]" value="<?= $this->data['id'] ?>">
+		<div class="form-group">
+			<label>Nome:</label>
+			<input 
+				class="form-control" 
+				type="text" 
+				name="cliente[nome]" 
+				placeholder="Digite o nome do cliente" 
+				alt="Digite o nome do cliente"
+				required="true"
+				value="<?= $this->data['nome'] ?>">	
+		</div>
+		<div class="form-group">
+			<label>Email:</label>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+				<input 
+					class="form-control" 
+					type="email" 
+					name="cliente[email]" 
+					placeholder="Digite o E-mail" 
+					alt="Digite o E-mail"
+					value="<?= $this->data['email'] ?>">	
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label>Forma de Pagamento:</label>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+				
+				<select id="formaPagamento" class="form-control" name="cliente[tipoPagamento]" alt="Selecione o tipo de pagamento"> 
+					<option name="" value=""></option>
+					<option name="boleto" value="Boleto" >Boleto</option>
+					<option name="cartaoCredito" value="Cartão de credito">Cartão de credito</option>
+					<option name="transferencia" value="Transferência">Transferência</option>
+				</select>	
+			</div>
+		</div>
+
+		<div class="form-group">
+			<button class="btn btn-primary">Cadastrar Contato</button>
+		</div>
+	</form>
+</div>
+
+
+
+</body>
+</html>
